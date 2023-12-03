@@ -26,7 +26,23 @@ def get_station_code (station_name):
     soup = BeautifulSoup(html_data,'html.parser')
     # extract station code from html data
     station_code = soup.find("table", class_="extrtable").find_all('b')[-1].get_text()
+    
     return station_code
+ 
+station_name = "pune-junction"
+station_code = get_station_code(station_name)
+
+print(f"Station Code for {station_name.title()} is {station_code}")  # use of .title() method for better display.
+station_name = "mumbai-central"
+station_code = get_station_code(station_name)
+print(f"Station Code for {station_name.title()} is {station_code}")
+
+station_name = "surat"
+station_code = get_station_code(station_name)
+print(f"Station Code for {station_name.title()} is {station_code}")
+
+
+
 
 
     
